@@ -20,7 +20,7 @@ const
  */
 class AppResponse {
     constructor(serverResponse) {
-        this.finshed = false;
+        this.finished = false;
         this.response = serverResponse;
         this.responseStatus = {};
     }
@@ -112,13 +112,13 @@ class AppResponse {
 
     /* 执行初始化完成回调 */
     ready(handler) {
-        this.finshed || handler(this.response);
+        this.finished || handler(this.response);
         return this;
     }
 
     /* 写入返回数据 */
     write(...args) {
-        this.finshed || this.response.write(...args);
+        this.finished || this.response.write(...args);
         return this;
     }
 
@@ -126,7 +126,7 @@ class AppResponse {
     end(...args) {
         return this.ready(res => {
             res.end(...args);
-            this.finshed = true;
+            this.finished = true;
         });
     }
 
@@ -163,7 +163,7 @@ class AppResponse {
                 data = JSON.stringify(data);
             }
 
-            this.finshed = true;
+            this.finished = true;
             res.writeHead(200, 'Ok', {'Content-Type': 'application/json'});
             res.end(data, encoding, callback);
         });
@@ -171,20 +171,20 @@ class AppResponse {
 
     /* 返回文件 */
     sendFile(file, options) {
-        return this.ready(() => {
+        return new Promise((resolve, reject) => {
+            this.ready(() => {
 
-            // 设置完成标识
-            this.finished = true;
+                // 判断文件是否存在
+                fs.stat(file, err => {
 
-            // 判断文件是否存在
-            fs.stat(file, err => {
+                    // 文件不存在时，返回【500】错误
+                    if (err) {
+                        return reject(this.state(404));
+                    }
 
-                // 文件不存在时，返回【500】错误
-                if (err) {
-                    return this.state(500, '获取返回文件信息错误');
-                }
-
-                this.sendStream(fs.createReadStream(file), options);
+                    // 返回文件内容
+                    resolve(this.sendStream(fs.createReadStream(file), options));
+                });
             });
         });
     }
@@ -226,6 +226,7 @@ class AppResponse {
                 }
             }
 
+            // 返回数据
             res.writeHead(200, 'Ok');
             readStream.pipe(res);
         });

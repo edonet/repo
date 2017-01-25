@@ -25,6 +25,10 @@ class AppServer {
         this.server = http.createServer((req, res) => {
             this.resolve(new AppRequest(req), new AppResponse(res));
         });
+
+        this.state(404, (req, res) => {
+            res.send('<h1>Error 404!</h1>');
+        });
     }
 
     /* 初始化完成回调 */

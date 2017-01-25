@@ -24,25 +24,31 @@ class AppRequest {
         this.method = clientRequest.method.toLowerCase();
         this.path = this.url.pathname;
         this.headers = clientRequest.headers;
+        this.readyQueue = [];
+        this.isReady = false;
 
         if (this.method === 'get') {
 
             /* 获取【GET】参数 */
-            this.param = qs.parse(this.url.query);
+            this.params = qs.parse(this.url.query);
+            this.readyQueue.forEach(v => v());
+            this.isReady = true;
 
         } else {
 
             /* 获取【POST】参数 */
-            this.param = '';
+            this.params = '';
 
             /* 监听数据传输事件 */
             this.request.on('data', chunk => {
-                this.param += chunk;
+                this.params += chunk;
             });
 
             /* 监听数据传输完成事件 */
             this.request.on('end', () => {
-                this.param = qs.parse(this.param);
+                this.params = qs.parse(this.param);
+                this.readyQueue.forEach(v => v());
+                this.isReady = true;
             });
         }
     }
@@ -54,7 +60,7 @@ class AppRequest {
 
     /* 初始化完成回调 */
     ready(handler) {
-        this.request.on('end', handler);
+        this.isReady ? handler() : this.readyQueue.push(handler);
         return this;
     }
 }

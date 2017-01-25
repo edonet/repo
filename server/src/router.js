@@ -7,7 +7,8 @@
  *********************************
  */
 const
-    assets = require('./assets');
+    assets = require('./assets'),
+    thunkify = require('./thunkify');
 
 
 /*
@@ -18,8 +19,9 @@ const
 class AppRouter {
 
     /* 初始化路由 */
-    constructor(dir) {
+    constructor(dir, options) {
         this.dir = dir;
+        this.options = options;
         this.middlewave = [];
         this.router = {};
     }
@@ -35,6 +37,19 @@ class AppRouter {
         return this;
     }
 
+    /* 添加中间件 */
+    use(options) {
+        this.middlewave.push(options);
+        return this;
+    }
+
+    /* 设置静态资源目录 */
+    assets(dir, options) {
+        this.dir = dir;
+        this.options = options;
+        return this;
+    }
+
     /* 解析路由 */
     resolve() {
         let router = this.router,
@@ -43,7 +58,7 @@ class AppRouter {
             staticAssets;
 
         // 设置静态资源路由
-        staticAssets = queue(assets(this.dir), (req, res) => res.state(404));
+        staticAssets = queue(assets(this.dir, this.options), (req, res) => res.state(404));
 
         // 生成路由执行方法
         for (let key of routerKeys) {
@@ -52,7 +67,7 @@ class AppRouter {
 
         // 设置执行方法
         this.invoke = queue(this.middlewave, (req, res) => {
-            req.path in resolveMap ? resolveMap[req.path](req, res) : staticAssets;
+            req.path in resolveMap ? resolveMap[req.path](req, res) : staticAssets(req, res);
         });
 
         return this.invoke;
@@ -77,7 +92,7 @@ function queue(arr, callback) {
         arr && arr.length ? arr.reduceRight((next, curr) => () => {
 
             // 返回已经完成
-            if (res.isfinished) {
+            if (res.finished) {
                 return true;
             }
 
@@ -86,12 +101,9 @@ function queue(arr, callback) {
                 return next();
             }
 
-            let handler = curr.handler;
-
+            // 执行路由处理函数
             res.dirname = curr.dirname;
-            return handler.length > 2 ?
-                handler(req, res, next) : next(handler(req, res));
-
+            return thunkify(() => curr.handler(req, res))(next);
         }, cb)() : cb();
     };
 }
