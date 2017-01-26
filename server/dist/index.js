@@ -1,6 +1,8 @@
 'use strict';
 
 const
-    app = require('../index')(__dirname);
+    appServer = require('../index')(__dirname);
 
-app.listen();
+appServer
+    .get('/get', (req, res) => res.send({ method: 'get' }))
+    .listen();
