@@ -102,7 +102,7 @@ function queue(arr, callback) {
             }
 
             // 执行路由处理函数
-            res.dirname = curr.dirname;
+            res.context = curr.dirname;
             return thunkify(() => curr.handler(req, res))(next);
         }, cb)() : cb();
     };

@@ -4,7 +4,7 @@
   "description": "nodejs server",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --harmony-async-await ./dist/index"
+    "test": "node ./dist/index"
   },
   "keywords": [
     "nodejs",

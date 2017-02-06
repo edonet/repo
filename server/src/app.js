@@ -7,12 +7,12 @@
  *********************************
  */
 const
+    path = require('path'),
     utils = require('./utils'),
     AppRouter = require('./router'),
     AppServer = require('./server'),
     appRouterSymbol = Symbol('app router'),
-    appServerSymbol = Symbol('app server'),
-    appDirnameSymbol = Symbol('app dirname');
+    appServerSymbol = Symbol('app server');
 
 
 /*
@@ -27,7 +27,6 @@ class App {
         this.dir = dir || process.cwd();
         this[appRouterSymbol] = new AppRouter(this.dir);
         this[appServerSymbol] = new AppServer(this[appRouterSymbol]);
-        this[appDirnameSymbol] = utils.resolveDir(this.dir);
     }
 
     /* 初始化完成方法 */
@@ -50,6 +49,8 @@ class App {
             this[appRouterSymbol].use({ dirname: this.dir, handler: method });
         } else if (utils.isFunction(handler)) {
             this[appRouterSymbol].use({ dirname: this.dir, handler, method });
+        } else if (utils.isObject(method) && utils.isFunction(method.handler)) {
+            this[appRouterSymbol].use(Object.assign({ dirname: this.dir }, method));
         }
 
         return this;
@@ -60,12 +61,15 @@ class App {
 
         // 添加路由配置文件
         if (utils.isString(router)) {
-            return this.route(require(router), this[appDirnameSymbol](router, target));
+            let filename = require.resolve(path.resolve(this.dir, router)),
+                dirname = path.dirname(filename);
+
+            return this.route(require(filename), target || dirname);
         }
 
         // 添加路由配置函数
         if (utils.isFunction(router)) {
-            return this.route(router(), target);
+            return this.route(router(this), target);
         }
 
         // 添加路由配置列表
@@ -75,13 +79,21 @@ class App {
         }
 
         // 添加单个路由
-        if (utils.isObject(router) && utils.isFunction(router.handler)) {
-            this[appRouterSymbol].add({
-                url: router.url,
-                method: router.method,
-                dirname: this[appDirnameSymbol](router.dirname, target),
-                handler: router.handler
-            });
+        if (utils.isObject(router) && utils.isString(router.url)) {
+
+            // 获取目标路径
+            target = utils.isString(target) ? path.resolve(this.dir, target) : this.dir;
+
+            // 获取当前路由目录
+            utils.isString(router.dirname) && (target = path.resolve(target, router.dirname));
+
+            // 添加当前路由
+            if (utils.isFunction(router.handler)) {
+                this[appRouterSymbol].add(Object.assign({}, router, { dirname: target }));
+            }
+
+            // 添加子路由列表
+            router.routes && this.route(router.routes, target);
         }
 
         return this;
@@ -91,16 +103,11 @@ class App {
     get(url, handler) {
 
         if (utils.isFunction(handler)) {
-            this[appRouterSymbol].add({
+            utils.isString(url) && this[appRouterSymbol].add({
                 url, method: 'get', dirname: this.dir, handler
             });
-        } else if (utils.isObject(handler) && utils.isFunction(handler.handler)) {
-            this[appRouterSymbol].add({
-                url,
-                method: 'get',
-                dirname: this[appDirnameSymbol](handler.dirname),
-                handler: handler.handler
-            });
+        } else if (utils.isObject(handler)) {
+            this.route(Object.assign(handler, { url, method: 'get'}));
         }
 
         return this;
@@ -110,16 +117,11 @@ class App {
     post(url, handler) {
 
         if (utils.isFunction(handler)) {
-            this[appRouterSymbol].add({
+            utils.isString(url) && this[appRouterSymbol].add({
                 url, method: 'post', dirname: this.dir, handler
             });
-        } else if (utils.isObject(handler) && utils.isFunction(handler.handler)) {
-            this[appRouterSymbol].add({
-                url,
-                method: 'post',
-                dirname: this[appDirnameSymbol](handler.dirname),
-                handler: handler.handler
-            });
+        } else if (utils.isObject(handler)) {
+            this.route(Object.assign(handler, { url, method: 'post'}));
         }
 
         return this;

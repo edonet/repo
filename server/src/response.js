@@ -8,6 +8,7 @@
  */
 const
     fs = require('fs'),
+    path = require('path'),
     zlib = require('zlib'),
     utils = require('./utils'),
     Transfer = require('./transfer');
@@ -21,6 +22,7 @@ const
 class AppResponse {
     constructor(serverResponse) {
         this.finished = false;
+        this.context = process.cwd();
         this.response = serverResponse;
         this.responseStatus = {};
     }
@@ -173,6 +175,9 @@ class AppResponse {
     sendFile(file, options) {
         return new Promise((resolve, reject) => {
             this.ready(() => {
+
+                // 解析文件所在路径
+                file = path.resolve(this.context, file);
 
                 // 判断文件是否存在
                 fs.stat(file, err => {
