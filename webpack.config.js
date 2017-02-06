@@ -9,7 +9,8 @@
 const
     path = require('path'),
     webpack = require('webpack'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    context = path.resolve(__dirname, process.argv.slice(2)[0]);
 
 
 /*
@@ -19,10 +20,10 @@ const
  */
 module.exports = {
     entry: {
-        index: './src/index.js'
+        index: path.join(context, './src/index.js')
     },
     output: {
-        path: './dist',
+        path: path.join(context, './dist'),
         publicPath: '/',
         filename: 'index.js'
     },
