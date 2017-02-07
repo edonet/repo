@@ -32,6 +32,7 @@ class AppRequest {
             /* 获取【GET】参数 */
             this.params = qs.parse(this.url.query);
             this.readyQueue.forEach(v => v());
+            this.readyQueue = null;
             this.isReady = true;
 
         } else {
@@ -48,6 +49,7 @@ class AppRequest {
             this.request.on('end', () => {
                 this.params = qs.parse(this.param);
                 this.readyQueue.forEach(v => v());
+                this.readyQueue = null;
                 this.isReady = true;
             });
         }

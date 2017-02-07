@@ -25,18 +25,20 @@ function parseRequest(dir) {
     // 返回请求处理方法
     return function* (req, res) {
         let url = req.path.slice(1) || 'index.html',
-            ext = path.extname(url).slice(1).toLowerCase(),
-            stats;
+            ext, stats;
 
 
         // 获取文件路径
-        url = path.normalize(url.replace(/\.\./g, ''));
-        url = path.resolve(dir, url);
+        url = url.replace(/\/$/, '/index.html');
+        url = path.resolve(dir, url.replace(/\.\./g, ''));
+
+        // 获取文件扩展名
+        ext = path.extname(url).slice(1).toLowerCase();
 
         // 获取文件状态
         stats = yield callback => fs.stat(url, callback);
 
-        if (!stats) {
+        if (!stats || !stats.isFile()) {
             return res.state(404);
         }
 

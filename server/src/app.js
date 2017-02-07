@@ -46,11 +46,11 @@ class App {
 
         // 必须包含路由处理方法
         if (utils.isFunction(method)) {
-            this[appRouterSymbol].use({ dirname: this.dir, handler: method });
+            this[appRouterSymbol].use({ context: this.dir, handler: method });
         } else if (utils.isFunction(handler)) {
-            this[appRouterSymbol].use({ dirname: this.dir, handler, method });
+            this[appRouterSymbol].use({ context: this.dir, handler, method });
         } else if (utils.isObject(method) && utils.isFunction(method.handler)) {
-            this[appRouterSymbol].use(Object.assign({ dirname: this.dir }, method));
+            this[appRouterSymbol].use(Object.assign({ context: this.dir }, method));
         }
 
         return this;
@@ -61,10 +61,15 @@ class App {
 
         // 添加路由配置文件
         if (utils.isString(router)) {
-            let filename = require.resolve(path.resolve(this.dir, router)),
+
+            // 获取目标路径
+            target = utils.isString(target) ? path.resolve(this.dir, target) : this.dir;
+
+            // 获取配置文件名
+            let filename = require.resolve(path.resolve(target, router)),
                 dirname = path.dirname(filename);
 
-            return this.route(require(filename), target || dirname);
+            return this.route(require(filename), dirname);
         }
 
         // 添加路由配置函数
@@ -74,7 +79,7 @@ class App {
 
         // 添加路由配置列表
         if (utils.isArray(router)) {
-            router.forEach(v => this.router(v, target));
+            router.forEach(v => this.route(v, target));
             return this;
         }
 
@@ -85,11 +90,11 @@ class App {
             target = utils.isString(target) ? path.resolve(this.dir, target) : this.dir;
 
             // 获取当前路由目录
-            utils.isString(router.dirname) && (target = path.resolve(target, router.dirname));
+            utils.isString(router.context) && (target = path.resolve(target, router.context));
 
             // 添加当前路由
             if (utils.isFunction(router.handler)) {
-                this[appRouterSymbol].add(Object.assign({}, router, { dirname: target }));
+                this[appRouterSymbol].add(Object.assign({}, router, { context: target }));
             }
 
             // 添加子路由列表
@@ -104,7 +109,7 @@ class App {
 
         if (utils.isFunction(handler)) {
             utils.isString(url) && this[appRouterSymbol].add({
-                url, method: 'get', dirname: this.dir, handler
+                url, method: 'get', context: this.dir, handler
             });
         } else if (utils.isObject(handler)) {
             this.route(Object.assign(handler, { url, method: 'get'}));
@@ -118,7 +123,7 @@ class App {
 
         if (utils.isFunction(handler)) {
             utils.isString(url) && this[appRouterSymbol].add({
-                url, method: 'post', dirname: this.dir, handler
+                url, method: 'post', context: this.dir, handler
             });
         } else if (utils.isObject(handler)) {
             this.route(Object.assign(handler, { url, method: 'post'}));
