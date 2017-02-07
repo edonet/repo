@@ -9,6 +9,7 @@ module.exports = {
         });
     },
     routes: [
+        './list',
         {
             url: '/user/about',
             handler: function (req, res) {

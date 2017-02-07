@@ -13,10 +13,10 @@ const
 
 /*
  *****************************
- * 定义转换流【Transfer】类
+ * 定义转换流【Through】类
  *****************************
  */
-class Transfer extends stream.Transform {
+class Through extends stream.Transform {
     constructor(handler) {
         super();
 
@@ -56,4 +56,4 @@ class Transfer extends stream.Transform {
  * 抛出接口
  *****************************
  */
-module.exports = Transfer;
+module.exports = Through;

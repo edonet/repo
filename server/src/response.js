@@ -10,8 +10,9 @@ const
     fs = require('fs'),
     path = require('path'),
     zlib = require('zlib'),
+    mime = require('./mime'),
     utils = require('./utils'),
-    Transfer = require('./transfer');
+    Through = require('./through');
 
 
 /*
@@ -174,18 +175,24 @@ class AppResponse {
     /* 返回文件 */
     sendFile(file, options) {
         return new Promise((resolve, reject) => {
-            this.ready(() => {
+            this.ready(res => {
 
                 // 解析文件所在路径
                 file = path.resolve(this.context, file);
 
                 // 判断文件是否存在
-                fs.stat(file, err => {
+                fs.stat(file, (err, stats) => {
 
                     // 文件不存在时，返回【500】错误
-                    if (err) {
+                    if (err || !stats.isFile()) {
                         return reject(this.state(404));
                     }
+
+                    // 获取文件扩展名
+                    let ext = path.extname(file).slice(1).toLowerCase();
+
+                    // 设置Content Type
+                    res.setHeader('Content-Type', mime[ext] || 'text/plain');
 
                     // 返回文件内容
                     resolve(this.sendStream(fs.createReadStream(file), options));
@@ -204,7 +211,7 @@ class AppResponse {
             // 校验处理函数
             if (utils.isFunction(options)) {
                 res.writeHead(200, 'Ok');
-                return readStream.pipe(new Transfer(options)).pipe(res);
+                return readStream.pipe(new Through(options)).pipe(res);
             }
 
             // 判断是否有处理配置
@@ -212,7 +219,7 @@ class AppResponse {
 
                 // 校验处理函数
                 if (utils.isFunction(options.filter)) {
-                    readStream = readStream.pipe(new Transfer(options.filter));
+                    readStream = readStream.pipe(new Through(options.filter));
                 }
 
                 if (options.zip) {
