@@ -4,7 +4,8 @@
   "description": "javascript repo",
   "main": "index.js",
   "scripts": {
-    "paper": "webpack paper"
+    "paper": "webpack paper",
+    "sass": "node ./bin/sass.js"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,17 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sass": "^3.1.0",
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.2.2",
+    "sass-loader": "^5.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0"
+  },
+  "bin": {
+    "sass": "./bin/sass.js"
   },
   "bugs": {
     "url": "https://github.com/edonet/repo/issues"
