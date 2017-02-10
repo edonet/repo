@@ -29,5 +29,6 @@ module.exports = {
     'wma': 'audio/x-ms-wma',
     'wmv': 'video/x-ms-wmv',
     'xml': 'text/xml',
-    'zip': 'application/zip'
+    'zip': 'application/zip',
+    'appcache': 'text/cache-manifest'
 };
