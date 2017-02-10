@@ -20,28 +20,27 @@ const
  */
 class Transfer {
     constructor(path, options) {
-        this[readStream] =
+        this[readStreamSymbol] =
             path instanceof stream.Readable ? path : fs.createReadStream(path, options);
     }
 
     /* 传输数据流 */
     pipe(dist, options) {
 
-        // 输出到写入流
-        if (dist instanceof stream.Writable) {
-            this[readStream] = this[readStream].pipe(dist);
-            return this;
-        }
-
         // 输出到文件
         if (utils.isString(dist)) {
-            this[readStream] = this[readStream].pipe(fs.createWriteStream(dist, options));
+            this[readStreamSymbol].pipe(fs.createWriteStream(dist, options));
             return this;
         }
 
         // 转换输入流
         if (utils.isFunction(dist)) {
-            this[readStream] = this[readStream].pipe(new Through(dist));
+            return new Transfer(this[readStreamSymbol].pipe(new Through(dist)));
+        }
+
+        // 输出到写入流
+        if (dist instanceof stream.Writable) {
+            this[readStreamSymbol].pipe(dist)
             return this;
         }
 
@@ -68,9 +67,10 @@ class Through extends stream.Transform {
     _transform(chunk, encoding, callback) {
 
         // 转换数据内容
-        this.handler(chunk.toString())
-            .then(data => data && this.push(data), err => console.error(err))
-            .then(callback);
+        this.handler(chunk.toString()).then(data => {
+            data && this.push(data);
+            callback();
+        }).catch(err => console.error(err))
     }
 }
 
