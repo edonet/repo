@@ -1,0 +1,47 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+            "folder_exclude_patterns": ["backup", "node_modules"],
+            "follow_symlinks": true
+		}
+	],
+    "build_systems":
+    [
+        // List
+        {
+            "name": "List",
+            "shell": true,
+
+            "windows": {
+                "cmd": ["dir"]
+            },
+
+            "linux": {
+                "cmd": ["ls -l"]
+            },
+
+            "osx": {
+                "cmd": ["ls -l"]
+            }
+        },
+
+        // Git Command
+        {
+            "name": "Git pull",
+            "cmd": "git pull",
+            "shell": true
+        },
+        {
+            "name": "Git push",
+            "cmd": "git push",
+            "shell": true
+        },
+        {
+            "name": "Git status",
+            "cmd": "git status",
+            "shell": true
+        }
+    ]
+}
