@@ -1,0 +1,16 @@
+{
+  "name": "meditor",
+  "version": "1.0.0",
+  "description": "a custom form editor",
+  "main": "./src/editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "form",
+    "editor",
+    "custom"
+  ],
+  "author": "lifx",
+  "license": "ISC"
+}

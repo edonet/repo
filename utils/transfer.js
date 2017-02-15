@@ -40,14 +40,13 @@ class Transfer {
 
         // 输出到写入流
         if (dist instanceof stream.Writable) {
-            this[readStreamSymbol].pipe(dist)
+            this[readStreamSymbol].pipe(dist);
             return this;
         }
 
         return this;
     }
 }
-
 
 /*
  *****************************
