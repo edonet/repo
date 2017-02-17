@@ -38,7 +38,8 @@
     "webpack": "^2.2.1"
   },
   "bin": {
-    "sass": "./bin/sass.js"
+    "sass": "./bin/sass.js",
+    "server": "./bin/server.js"
   },
   "bugs": {
     "url": "https://github.com/edonet/repo/issues"

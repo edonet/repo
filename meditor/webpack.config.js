@@ -19,9 +19,12 @@ const
  */
 module.exports = {
     context: __dirname,
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        vendor: 'babel-polyfill/dist/polyfill'
+    },
     output: {
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, './dist')
     },
     module: {
@@ -61,10 +64,10 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"'
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: { warnings: false }
+        // }),
         new webpack.optimize.AggressiveMergingPlugin(),
-        new ExtractTextPlugin("index.css")
+        new ExtractTextPlugin("[name].css")
     ]
 };
