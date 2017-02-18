@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+$fontColor: #999;
+$borderColor: #eee;
+$bodyBgColor: #f1f1f1;
+$headerHeight: 40px;
+$widgetWidth: 210px;
+$propertyWidth: 240px;
+
+
+/* 面板属性 */
+%pane {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+}
