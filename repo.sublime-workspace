@@ -8,34 +8,89 @@
 	"buffers":
 	[
 		{
+			"file": "server/src/app.js",
+			"settings":
+			{
+				"buffer_size": 4620,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "repo.sublime-project",
 			"settings":
 			{
-				"buffer_size": 264,
-				"encoding": "UTF-8",
+				"buffer_size": 845,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Git:pull",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
+					"List",
+					""
+				]
+			],
+			[
+				"Git pull",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Git:pull",
+					""
+				],
+				[
+					"List",
+					""
+				]
+			],
+			[
+				"Git:pull",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 467.0
 	},
 	"console":
 	{
-		"height": 153.0,
+		"height": 425.0,
 		"history":
 		[
+			"window.os",
+			"window",
+			"view.os",
+			"view",
+			"os",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"git pull"
 		]
 	},
 	"distraction_free":
@@ -53,6 +108,8 @@
 	],
 	"file_history":
 	[
+		"/Users/lifx/edoner/repo/utils/transfer.js",
+		"/Users/lifx/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/lifx/edoner/repo/repo.sublime-project"
 	],
 	"find":
@@ -93,30 +150,62 @@
 			[
 				{
 					"buffer": 0,
-					"file": "repo.sublime-project",
+					"file": "server/src/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 264,
+						"buffer_size": 4620,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								255,
-								255
+								2824,
+								2824
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "repo.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								602,
+								602
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -180,16 +269,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "pa",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"pa",
+				"",
 				"~/edoner/packages/packages.sublime-project"
 			],
 			[
-				"",
-				"~/edoner/repo/repo.sublime-project"
+				"pa",
+				"~/edoner/packages/packages.sublime-project"
 			]
 		],
 		"width": 380.0
