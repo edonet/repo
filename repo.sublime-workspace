@@ -8,26 +8,73 @@
 	"buffers":
 	[
 		{
-			"file": "server/src/app.js",
+			"file": "test.js",
 			"settings":
 			{
-				"buffer_size": 4620,
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "test.js"
+			}
+		},
+		{
+			"file": "postcss.config.js",
+			"settings":
+			{
+				"buffer_size": 543,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "repo.sublime-project",
+			"file": "meditor/webpack.config.js",
 			"settings":
 			{
-				"buffer_size": 845,
+				"buffer_size": 1927,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Git:pull",
+	"build_system": "Packages/JavaScript/JavaScript.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
+					"Git push",
+					""
+				],
+				[
+					"Git status",
+					""
+				],
+				[
+					"List",
+					""
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					""
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Start"
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Exit"
+				]
+			],
+			[
+				"Packages/JavaScript/JavaScript.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -104,10 +151,14 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/lifx/edoner/repo"
+		"/Users/lifx/edoner/repo/meditor",
+		"/Users/lifx/edoner/repo/webpack"
 	],
 	"file_history":
 	[
+		"/Users/lifx/Downloads/httpd.conf",
+		"/Users/lifx/edoner/repo/meditor/webpack.config.js",
+		"/Users/lifx/edoner/repo/server/src/app.js",
 		"/Users/lifx/edoner/repo/utils/transfer.js",
 		"/Users/lifx/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/lifx/edoner/repo/repo.sublime-project"
@@ -145,24 +196,83 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/src/app.js",
+					"file": "test.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4620,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2824,
-								2824
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "test.js",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "postcss.config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								543,
+								543
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "meditor/webpack.config.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -176,36 +286,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "repo.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 845,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								602,
-								602
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
