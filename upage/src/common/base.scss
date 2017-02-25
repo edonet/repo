@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@import "../common/reset";
+@import "../common/config";
+
+body {
+    color: $fontColor;
+    background-color: $bodyBgColor;
+    font-size: $fontSize;
+    line-height: 1.5em;
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+.app-container {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}

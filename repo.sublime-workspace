@@ -3,42 +3,121 @@
 	{
 		"selected_items":
 		[
+			[
+				"fon",
+				"fontSize"
+			],
+			[
+				"defaul",
+				"default\tSyntax"
+			],
+			[
+				"expo",
+				"export\tSyntax"
+			],
+			[
+				"unl",
+				"unlink\tfs"
+			],
+			[
+				"use",
+				"use strict\tSyntax"
+			],
+			[
+				"fore",
+				"forEach\tArray"
+			],
+			[
+				"func",
+				"function name\tSyntax"
+			],
+			[
+				"modu",
+				"module\tSyntax"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "test.js",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "test.js"
-			}
-		},
-		{
-			"file": "postcss.config.js",
-			"settings":
-			{
-				"buffer_size": 543,
+				"buffer_size": 1321,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "meditor/webpack.config.js",
+			"file": "repo.sublime-project",
 			"settings":
 			{
-				"buffer_size": 1927,
+				"buffer_size": 490,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "upage/webpack.config.js",
+			"settings":
+			{
+				"buffer_size": 2188,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/JavaScript/JavaScript.sublime-build",
+	"build_system": "Packages/Erik/Terminal.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
+					"Git push",
+					""
+				],
+				[
+					"Git status",
+					""
+				],
+				[
+					"List",
+					""
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					""
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Kill Node"
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Webpack"
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					""
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Start"
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Exit"
+				]
+			],
+			[
+				"Packages/Erik/Terminal.sublime-build",
+				"Webpack"
+			]
+		],
 		[
 			[
 				[
@@ -82,6 +161,110 @@
 					""
 				],
 				[
+					"Git push",
+					""
+				],
+				[
+					"Git status",
+					""
+				],
+				[
+					"List",
+					""
+				],
+				[
+					"Webpack",
+					""
+				]
+			],
+			[
+				"Webpack",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
+					"Git push",
+					""
+				],
+				[
+					"Git status",
+					""
+				],
+				[
+					"List",
+					""
+				],
+				[
+					"Webpack",
+					""
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					""
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Kill Node"
+				]
+			],
+			[
+				"Packages/Erik/Terminal.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
+					"Git push",
+					""
+				],
+				[
+					"Git status",
+					""
+				],
+				[
+					"List",
+					""
+				],
+				[
+					"Webpack",
+					""
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					""
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Start"
+				],
+				[
+					"Packages/JavaScript/JavaScript.sublime-build",
+					"Exit"
+				]
+			],
+			[
+				"Webpack",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Git pull",
+					""
+				],
+				[
 					"List",
 					""
 				]
@@ -108,13 +291,21 @@
 			]
 		]
 	],
-	"build_varint": "",
+	"build_varint": "Kill Node",
 	"command_palette":
 	{
 		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -131,6 +322,9 @@
 		"height": 425.0,
 		"history":
 		[
+			"subl",
+			".project",
+			"repo",
 			"window.os",
 			"window",
 			"view.os",
@@ -151,11 +345,47 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/lifx/edoner/repo/meditor",
-		"/Users/lifx/edoner/repo/webpack"
+		"/Users/lifx/web/repo"
 	],
 	"file_history":
 	[
+		"/Users/lifx/web/repo/bin/transfer.js",
+		"/Users/lifx/web/repo/bin/webpack.js",
+		"/Users/lifx/web/repo/upage/src/property/index.scss",
+		"/Users/lifx/web/repo/upage/src/app.html",
+		"/Users/lifx/web/repo/upage/src/app.js",
+		"/Users/lifx/web/repo/upage/src/property/index.js",
+		"/Users/lifx/web/repo/upage/src/property/index.html",
+		"/Users/lifx/web/repo/upage/src/paper/index.html",
+		"/Users/lifx/web/repo/repo.sublime-project",
+		"/Users/lifx/web/repo/bin/terminal.js",
+		"/Users/lifx/web/repo/package.json",
+		"/Users/lifx/web/repo/bin/terminal.sh",
+		"/Users/lifx/web/repo/upage/src/common/base.scss",
+		"/Users/lifx/web/repo/upage/src/header/index.html",
+		"/Users/lifx/web/repo/upage/dist/index.css",
+		"/Users/lifx/web/repo/upage/webpack.config.js",
+		"/Users/lifx/web/repo/upage/src/aside/index.js",
+		"/Users/lifx/web/repo/upage/src/aside/index.html",
+		"/Users/lifx/web/repo/upage/src/aside/index.scss",
+		"/Users/lifx/web/repo/upage/src/index.html",
+		"/Users/lifx/web/repo/upage/src/paper/index.scss",
+		"/Users/lifx/web/repo/upage/src/paper/index.js",
+		"/Users/lifx/web/repo/upage/src/header/index.js",
+		"/Users/lifx/web/repo/upage/src/header/index.scss",
+		"/Users/lifx/web/repo/upage/src/common/config.scss",
+		"/Users/lifx/web/repo/upage/dist/index.html",
+		"/Users/lifx/web/repo/upage/src/index.js",
+		"/Users/lifx/web/repo/upage/src/vue.js",
+		"/Users/lifx/web/repo/utils/mkdir.js",
+		"/Users/lifx/web/repo/utils/rmdir.js",
+		"/Users/lifx/web/repo/bin/sass.js",
+		"/Users/lifx/web/repo/utils/symlink.js",
+		"/Users/lifx/web/repo/upage/package.json",
+		"/Users/lifx/web/repo/.gitignore",
+		"/Users/lifx/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/lifx/edoner/repo/test.js",
+		"/Users/lifx/edoner/repo/postcss.config.js",
 		"/Users/lifx/Downloads/httpd.conf",
 		"/Users/lifx/edoner/repo/meditor/webpack.config.js",
 		"/Users/lifx/edoner/repo/server/src/app.js",
@@ -165,7 +395,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -179,6 +409,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"line",
+			"paper",
+			"aside",
+			"meditor",
+			"\"",
+			"form"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -196,33 +432,34 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test.js",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1155,
+								1155
 							]
 						],
 						"settings":
 						{
-							"auto_name": "test.js",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 382.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -230,19 +467,49 @@
 				},
 				{
 					"buffer": 1,
-					"file": "postcss.config.js",
+					"file": "repo.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 543,
+						"buffer_size": 490,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								543,
-								543
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "upage/webpack.config.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								406,
+								406
 							]
 						],
 						"settings":
@@ -257,47 +524,17 @@
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "meditor/webpack.config.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1927,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -334,7 +571,7 @@
 	"project": "repo.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -354,7 +591,23 @@
 		[
 			[
 				"",
-				"~/edoner/packages/packages.sublime-project"
+				"~/web/packages/packages.sublime-project"
+			],
+			[
+				"pac",
+				"~/web/packages/packages.sublime-project"
+			],
+			[
+				"p",
+				"~/web/packages/packages.sublime-project"
+			],
+			[
+				"pack",
+				"~/web/packages/packages.sublime-project"
+			],
+			[
+				"repo",
+				"~/web/repo/repo.sublime-project"
 			],
 			[
 				"pa",

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "paper": "webpack paper",
-    "meditor": "webpack --config=./meditor/webpack.config.js",
+    "upage": "webpack --config=./upage/webpack.config.js",
     "sass": "node ./bin/sass.js"
   },
   "repository": {
@@ -33,13 +33,17 @@
     "gulp-sass": "^3.1.0",
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.2.2",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^5.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1"
   },
   "bin": {
     "sass": "./bin/sass.js",
-    "server": "./bin/server.js"
+    "server": "./bin/server.js",
+    "transfer": "./bin/transfer.js",
+    "dist": "./bin/webpack.js",
+    "terminal": "./bin/terminal.js"
   },
   "bugs": {
     "url": "https://github.com/edonet/repo/issues"

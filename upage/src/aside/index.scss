@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@import "../common/config";
+
+.app-aside {
+    @extend %pane;
+
+    left: 0;
+    top: $headerHeight;
+    bottom: 0;
+    width: $widgetWidth;
+    background-color: white;
+    border-right: 1px solid $borderColor;
+    z-index: 10;
+}
+
