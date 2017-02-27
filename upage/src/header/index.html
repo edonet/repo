@@ -1,7 +1,26 @@
-
 <!--
  ! App Header Template
  !-->
 <div class="app-header">
-    <h2>{{filename}}</h2>
+    <h2 class="inl mr20">文件名：{{filename}}</h2>
+    <div class="inl">
+        <span>尺寸：</span>
+        <label>
+            <input
+                type="text"
+                class="form-input small"
+                :value="paper.size.width"
+                @input="updateSize('width', $event)" />
+            <span class="ml5">{{paper.unit}}</span>
+        </label>
+        <i class="icon icon-multi f12 mh10"></i>
+        <label>
+            <input
+                type="text"
+                class="form-input small"
+                :value="paper.size.height"
+                @input="updateSize('height', $event)" />
+            <span class="ml5">{{paper.unit}}</span>
+        </label>
+    </div>
 </div>

@@ -1,8 +1,10 @@
 @charset "utf-8";
 
 $fontSize: 12px;
-$fontColor: #999;
-$borderColor: #eee;
+$fontColor: #151515;
+$grayColor: #878787;
+$borderColor: #dedede;
+$inputColor: #dedede;
 $bodyBgColor: #f1f1f1;
 $headerHeight: 40px;
 $widgetWidth: 210px;
@@ -17,7 +19,9 @@ $propertyWidth: 240px;
     overflow: hidden;
 }
 
+
 /* 字体大小 */
 @function rem($size) {
     @return $size * $fontSize;
 }
+

@@ -46,7 +46,7 @@ module.exports = {
                 ])
             },
             {
-                test: /.(png|jpg|gif|woff|woff2)$/,
+                test: /.(png|jpg|gif|woff|woff2|eot|ttf)$/,
                 loader: 'url-loader?limit=8192&name=img/[name].[ext]'
             },
             {
@@ -54,7 +54,7 @@ module.exports = {
                 loader: 'file-loader?name=img/[name].[ext]'
             },
             {
-                test: /\.(tpl|html)$/,
+                test: /\.(html|tpl)$/,
                 loader: 'raw-loader'
             }
         ]

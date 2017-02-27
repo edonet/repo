@@ -8,6 +8,7 @@
  */
 import './index.scss';
 import template from './index.html';
+import { dispatch } from '../store';
 
 
 /*
@@ -18,6 +19,17 @@ import template from './index.html';
 export default {
     template,
     props: {
+        paper: Object,
         filename: String
+    },
+    methods: {
+        updateSize: function (name, e) {
+
+            // 通过 input 事件发出数值
+            dispatch(
+                'updatePaperSize',
+                Object.assign({}, this.paper.size, { [name]: parseInt(e.target.value) || 0 })
+            );
+        }
     }
 };

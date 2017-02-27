@@ -1,16 +1,18 @@
 @charset "utf-8";
 
-@import "../common/reset";
-@import "../common/config";
+@import "./reset";
+@import "./config";
+@import "./iconfont";
 
 body {
     color: $fontColor;
     background-color: $bodyBgColor;
     font-size: $fontSize;
     line-height: 1.5em;
-    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* 窗口容器 */
 .app-container {
     display: block;
     position: fixed;
@@ -19,3 +21,65 @@ body {
     right: 0;
     bottom: 0;
 }
+
+/* 输入框样式 */
+.form-input {
+    font-size: 12px;
+    line-height: 16px;
+    // border: 1px solid $inputColor;
+    padding: 2px 5px;
+
+    &.long { width: 300px !important; }
+    &.small { width: 60px !important; }
+    &:focus { outline: none !important; }
+}
+
+
+/* 布局 */
+.blk { display: block !important; }
+.inl { display: inline-block !important; }
+.flex { display: flex !important; }
+
+
+/* 字体对齐 */
+.align-l { text-align: left !important; }
+.align-r { text-align: right !important; }
+.align-c { text-align: center !important; }
+.align-t { vertical-align: top !important; }
+.align-b { vertical-align: bottom !important; }
+.align-m { vertical-align: middle !important; }
+
+
+/* 颜色预设 */
+$colorList: (
+    gray: $grayColor,
+    black: $fontColor,
+);
+@each $name, $color in $colorList {
+    .#{$name} { color: $color !important; }
+}
+
+
+/* 字体大小预设 */
+$fontSizeList: 12, 14, 16, 18, 21, 24;
+@each $size in $fontSizeList {
+    .f#{$size} {
+        font-size: $size * 1px !important;
+    }
+}
+
+
+/* 边距预设 */
+$sizeList: 5, 10, 15, 20, 30, 40;
+@each $size in $sizeList {
+    .ml#{$size}, .mh#{$size}, .m#{$size} { margin-left: $size * 1px !important; }
+    .mr#{$size}, .mh#{$size}, .m#{$size} { margin-right: $size * 1px !important; }
+    .mt#{$size}, .mv#{$size}, .m#{$size} { margin-top: $size * 1px !important; }
+    .mb#{$size}, .mv#{$size}, .m#{$size} { margin-bottom: $size * 1px !important; }
+
+    .pl#{$size}, .ph#{$size}, .p#{$size} { padding-left: $size * 1px !important; }
+    .pr#{$size}, .ph#{$size}, .p#{$size} { padding-right: $size * 1px !important; }
+    .pt#{$size}, .pv#{$size}, .p#{$size} { padding-top: $size * 1px !important; }
+    .pb#{$size}, .pv#{$size}, .p#{$size} { padding-bottom: $size * 1px !important; }
+}
+

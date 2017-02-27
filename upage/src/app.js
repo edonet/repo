@@ -7,6 +7,8 @@
  ************************************
  */
 import './common/base.scss';
+import './components';
+import store from './store';
 import template from './app.html';
 import appHeader from './header';
 import appAside from './aside';
@@ -21,9 +23,7 @@ import appProperty from './property';
  */
 export default {
     template,
-    data: () => ({
-        filename: '未命名文件'
-    }),
+    data: () => store,
     components: {
         appHeader, appAside, appPaper, appProperty
     }

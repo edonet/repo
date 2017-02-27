@@ -19,3 +19,4 @@ export default new Vue({
     el: '#app',
     components: { app }
 });
+

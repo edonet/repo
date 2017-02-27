@@ -2,25 +2,27 @@
 
 @import "../common/config";
 
-.app-paper-wrapper {
+.app-wrapper {
     @extend %pane;
-    $padding: 20px;
 
-    left: $widgetWidth + $padding;
-    top: $headerHeight + $padding;
-    right: $propertyWidth + $padding;
+    left: $widgetWidth;
+    top: $headerHeight;
+    right: $propertyWidth;
     bottom: 0;
+    overflow: scroll;
 }
 
+.app-canvas {
+    @extend %pane;
+    $padding: 20px;
+    padding: $padding;
+}
 
 .app-paper {
-    @extend %pane;
-
-    top: 0;
-    left: 0;
     width: 210mm;
     height: 297mm;
     background-color: white;
     border: 1px solid $borderColor;
-    box-shadow: 0 0 3px 1px $borderColor;
+    box-shadow: 0 0 5px 1px rgba($borderColor, 0.45);
+    overflow: hidden;
 }

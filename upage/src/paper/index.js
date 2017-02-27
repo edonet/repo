@@ -16,5 +16,16 @@ import template from './index.html';
  ************************************
  */
 export default {
-    template
+    template,
+    props: {
+        paper: Object
+    },
+    computed: {
+        style: function () {
+            return {
+                width: this.paper.size.width + this.paper.unit,
+                height: this.paper.size.height ? this.paper.size.height + this.paper.unit : 'auto'
+            };
+        }
+    }
 };
