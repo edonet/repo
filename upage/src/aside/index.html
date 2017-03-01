@@ -2,5 +2,7 @@
  ! App Aside Template
  !-->
 <div class="app-aside">
-
+    <ul class="m10">
+        <li v-for="name of toolbar" draggable="true" @dragstart="drag($event, name)">{{name}}</li>
+    </ul>
 </div>

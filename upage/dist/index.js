@@ -79,8 +79,16 @@ exports.default = {
         size: {
             width: 210,
             height: 297
-        }
-    }
+        },
+        padding: {
+            top: 19.5,
+            right: 19.5,
+            bottom: 19.5,
+            left: 19.5
+        },
+        widgets: []
+    },
+    toolbar: ['text', 'image', 'list']
 };
 
 /***/ }),
@@ -101,7 +109,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(13);
+__webpack_require__(18);
 
 __webpack_require__(7);
 
@@ -109,7 +117,7 @@ var _store = __webpack_require__(2);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _app = __webpack_require__(18);
+var _app = __webpack_require__(23);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -160,12 +168,12 @@ exports.default = {
  */
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
-__webpack_require__(12);
+__webpack_require__(17);
 
-var _index = __webpack_require__(19);
+var _index = __webpack_require__(24);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -177,7 +185,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  ************************************
  */
 exports.default = {
-  template: _index2.default
+    template: _index2.default,
+    props: {
+        toolbar: Array
+    },
+    methods: {
+        drag: function drag(e, data) {
+            console.log(e);
+            e.dataTransfer.setData('text', data);
+        }
+    }
 };
 
 /***/ }),
@@ -204,9 +221,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-__webpack_require__(14);
+__webpack_require__(19);
 
-var _index = __webpack_require__(20);
+var _index = __webpack_require__(25);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -253,11 +270,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-__webpack_require__(15);
+__webpack_require__(20);
 
-var _index = __webpack_require__(21);
+var _store = __webpack_require__(2);
+
+var _index = __webpack_require__(26);
 
 var _index2 = _interopRequireDefault(_index);
+
+var _widget = __webpack_require__(13);
+
+var _widget2 = _interopRequireDefault(_widget);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -272,13 +295,53 @@ exports.default = {
         paper: Object
     },
     computed: {
-        style: function style() {
+        size: function size() {
             return {
                 width: this.paper.size.width + this.paper.unit,
                 height: this.paper.size.height ? this.paper.size.height + this.paper.unit : 'auto'
             };
+        },
+        style: function style() {
+            var position = {},
+                keys = ['left', 'right', 'top', 'bottom'];
+
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = keys[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var name = _step.value;
+
+                    position[name] = this.paper.padding[name] + this.paper.unit;
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            return position;
         }
-    }
+    },
+    methods: {
+        drop: function drop(e) {
+            (0, _store.dispatch)('addPaperWidget', { name: e.dataTransfer.getData('text') });
+        },
+        dragover: function dragover(e) {
+            e.preventDefault();
+        }
+    },
+    components: { widget: _widget2.default }
 };
 
 /***/ }),
@@ -298,9 +361,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(16);
+__webpack_require__(21);
 
-var _index = __webpack_require__(22);
+var _index = __webpack_require__(27);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -329,7 +392,7 @@ exports.default = {
  */
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _state = __webpack_require__(3);
@@ -344,74 +407,203 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  ************************************
  */
 exports.default = {
-  updatePaperSize: function updatePaperSize(data) {
-    _state2.default.paper.size = data;
-  }
+    updatePaperSize: function updatePaperSize(data) {
+        _state2.default.paper.size = data;
+    },
+    addPaperWidget: function addPaperWidget(data) {
+        _state2.default.paper.widgets.push(data);
+    }
 };
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+/*
+ ************************************
+ * 抛出【App Paper】接口
+ ************************************
+ */
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  template: '<div>image</div>'
+};
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+/*
+ ************************************
+ * 加载依赖模块
+ ************************************
+ */
+// import './index.scss';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _widgets = __webpack_require__(16);
+
+var _widgets2 = _interopRequireDefault(_widgets);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+ ************************************
+ * 抛出【App Aside】模块
+ ************************************
+ */
+exports.default = {
+    render: function render(createElement) {
+        return createElement(_widgets2.default[this.data.name], this.data);
+    },
+    props: {
+        data: Object
+    },
+    methods: {}
+};
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+/*
+ ************************************
+ * 抛出【App Paper】接口
+ ************************************
+ */
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  template: '<div>list</div>'
+};
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+/*
+ ************************************
+ * 抛出【App Paper】接口
+ ************************************
+ */
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  template: '<div>text</div>'
+};
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _text = __webpack_require__(15);
+
+var _text2 = _interopRequireDefault(_text);
+
+var _image = __webpack_require__(12);
+
+var _image2 = _interopRequireDefault(_image);
+
+var _list = __webpack_require__(14);
+
+var _list2 = _interopRequireDefault(_list);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = { text: _text2.default, image: _image2.default, list: _list2.default };
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 17 */,
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\n ! App Template\n !-->\n<div class=\"app-container\">\n    <app-header :filename=\"filename\" :paper=\"paper\"></app-header>\n    <app-aside></app-aside>\n    <app-paper :paper=\"paper\"></app-paper>\n    <app-property></app-property>\n</div>\n"
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\n ! App Aside Template\n !-->\n<div class=\"app-aside\">\n\n</div>\n"
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\n ! App Header Template\n !-->\n<div class=\"app-header\">\n    <h2 class=\"inl mr20\">文件名：{{filename}}</h2>\n    <div class=\"inl\">\n        <span>尺寸：</span>\n        <label>\n            <input\n                type=\"text\"\n                class=\"form-input small\"\n                :value=\"paper.size.width\"\n                @input=\"updateSize('width', $event)\" />\n            <span class=\"ml5\">{{paper.unit}}</span>\n        </label>\n        <i class=\"icon icon-multi f12 mh10\"></i>\n        <label>\n            <input\n                type=\"text\"\n                class=\"form-input small\"\n                :value=\"paper.size.height\"\n                @input=\"updateSize('height', $event)\" />\n            <span class=\"ml5\">{{paper.unit}}</span>\n        </label>\n    </div>\n</div>\n"
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\n ! App Paper Template\n !-->\n<div class=\"app-wrapper\">\n    <div class=\"app-canvas\">\n        <div class=\"app-paper\" :style=\"style\"></div>\n    </div>\n</div>\n"
+// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 22 */
+/* 22 */,
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n ! App Template\n !-->\n<div class=\"app-container\">\n    <app-header :filename=\"filename\" :paper=\"paper\"></app-header>\n    <app-aside :toolbar=\"toolbar\"></app-aside>\n    <app-paper :paper=\"paper\"></app-paper>\n    <app-property></app-property>\n</div>\n"
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n ! App Aside Template\n !-->\n<div class=\"app-aside\">\n    <ul class=\"m10\">\n        <li v-for=\"name of toolbar\" draggable=\"true\" @dragstart=\"drag($event, name)\">{{name}}</li>\n    </ul>\n</div>\n"
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n ! App Header Template\n !-->\n<div class=\"app-header\">\n    <h2 class=\"inl mr20\">文件名：{{filename}}</h2>\n    <div class=\"inl\">\n        <span>尺寸：</span>\n        <label>\n            <input\n                type=\"text\"\n                class=\"form-input small\"\n                :value=\"paper.size.width\"\n                @input=\"updateSize('width', $event)\" />\n            <span class=\"ml5\">{{paper.unit}}</span>\n        </label>\n        <i class=\"icon icon-multi f12 mh10\"></i>\n        <label>\n            <input\n                type=\"text\"\n                class=\"form-input small\"\n                :value=\"paper.size.height\"\n                @input=\"updateSize('height', $event)\" />\n            <span class=\"ml5\">{{paper.unit}}</span>\n        </label>\n    </div>\n</div>\n"
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n ! App Paper Template\n !-->\n<div class=\"app-wrapper\">\n    <div class=\"app-canvas\">\n        <div class=\"app-paper\" :style=\"size\">\n            <div class=\"app-paper-body\" :style=\"style\" @drop=\"drop($event)\" @dragover='dragover($event)'>\n                <widget v-for=\"x in paper.widgets\" :data=\"x\"></widget>\n            </div>\n        </div>\n    </div>\n</div>\n"
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = "<!--\n ! App Property Template\n !-->\n<div class=\"app-property\">\n</div>\n"
 
 /***/ }),
-/* 23 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -450,4 +642,4 @@ exports.default = new _vue2.default({
 });
 
 /***/ })
-],[23]);
+],[28]);

@@ -26,3 +26,10 @@
     box-shadow: 0 0 5px 1px rgba($borderColor, 0.45);
     overflow: hidden;
 }
+
+.app-paper-body {
+    @extend %pane;
+
+    border: 1px dashed $borderColor;
+}
+

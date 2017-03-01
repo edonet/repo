@@ -71,53 +71,80 @@
 			"file": "upage/webpack.config.js",
 			"settings":
 			{
-				"buffer_size": 2196,
+				"buffer_size": 2260,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "upage/src/index.js",
+			"file": "upage/src/store/state.js",
 			"settings":
 			{
-				"buffer_size": 327,
+				"buffer_size": 463,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "upage/src/store/index.js",
-			"settings":
-			{
-				"buffer_size": 555,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "index.js"
 			}
 		},
 		{
 			"file": "upage/src/app.html",
 			"settings":
 			{
-				"buffer_size": 233,
+				"buffer_size": 252,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "upage/src/header/index.js",
+			"file": "upage/src/aside/index.js",
 			"settings":
 			{
-				"buffer_size": 670,
+				"buffer_size": 494,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "upage/src/header/index.html",
+			"file": "upage/src/aside/index.html",
 			"settings":
 			{
-				"buffer_size": 764,
+				"buffer_size": 190,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "upage/src/paper/index.html",
+			"settings":
+			{
+				"buffer_size": 333,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "upage/src/widget/index.js",
+			"settings":
+			{
+				"buffer_size": 362,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "index.js"
+			}
+		},
+		{
+			"file": "upage/src/paper/index.scss",
+			"settings":
+			{
+				"buffer_size": 549,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "upage/src/paper/index.js",
+			"settings":
+			{
+				"buffer_size": 1065,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -475,7 +502,7 @@
 			]
 		]
 	],
-	"build_varint": "Webpack",
+	"build_varint": "Server",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -537,11 +564,18 @@
 		"/Users/lifx/web/repo",
 		"/Users/lifx/web/repo/upage",
 		"/Users/lifx/web/repo/upage/dist",
-		"/Users/lifx/web/repo/upage/src"
+		"/Users/lifx/web/repo/upage/src",
+		"/Users/lifx/web/repo/upage/src/widget"
 	],
 	"file_history":
 	[
 		"/Users/lifx/web/repo/upage/src/app.js",
+		"/Users/lifx/web/repo/upage/src/header/index.js",
+		"/Users/lifx/web/repo/upage/src/header/index.html",
+		"/Users/lifx/web/repo/upage/src/app.html",
+		"/Users/lifx/web/repo/upage/src/store/index.js",
+		"/Users/lifx/web/repo/upage/webpack.config.js",
+		"/Users/lifx/web/repo/upage/src/index.js",
 		"/Users/lifx/web/repo/upage/src/paper/index.js",
 		"/Users/lifx/web/repo/upage/src/store/state.js",
 		"/Users/lifx/web/repo/upage/src/store/action.js",
@@ -549,15 +583,11 @@
 		"/Users/lifx/web/repo/upage/src/store.js",
 		"/Users/lifx/web/repo/upage/dist/index.html",
 		"/Users/lifx/web/repo/upage/src/header/index.scss",
-		"/Users/lifx/web/repo/upage/src/app.html",
 		"/Users/lifx/web/repo/upage/src/paper/index.html",
-		"/Users/lifx/web/repo/upage/src/header/index.html",
 		"/Users/lifx/web/repo/upage/src/paper/index.scss",
 		"/Users/lifx/web/repo/upage/src/common/base.scss",
 		"/Users/lifx/web/repo/upage/src/common/config.scss",
 		"/Users/lifx/web/repo/upage/src/common/iconfont.scss",
-		"/Users/lifx/web/repo/upage/src/header/index.js",
-		"/Users/lifx/web/repo/upage/webpack.config.js",
 		"/Users/lifx/web/repo/upage/src/components/index.js",
 		"/Users/lifx/web/repo/upage/src/property/index.scss",
 		"/Users/lifx/web/repo/upage/src/icons/iconfont.css",
@@ -594,7 +624,6 @@
 		"/Users/lifx/web/repo/upage/dist/index.css",
 		"/Users/lifx/web/repo/upage/dist/index.js",
 		"/Users/lifx/web/repo/upage/dist/vendor.min.js",
-		"/Users/lifx/web/repo/upage/src/index.js",
 		"/Users/lifx/web/repo/upage/src/vue.js",
 		"/Users/lifx/web/repo/upage/src/common/reset.css",
 		"/Users/lifx/web/repo/utils/argv.js",
@@ -649,6 +678,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"css",
+			"x",
+			"widget",
+			"'",
 			"actions",
 			"action.",
 			"action",
@@ -686,7 +719,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -695,15 +728,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2196,
+						"buffer_size": 2260,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								984,
-								984
+								1783,
+								1783
 							]
 						],
 						"settings":
@@ -713,27 +746,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 385.0,
+						"translation.y": 791.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "upage/src/index.js",
+					"file": "upage/src/store/state.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 327,
+						"buffer_size": 463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								85,
-								85
+								332,
+								332
 							]
 						],
 						"settings":
@@ -744,24 +777,136 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "upage/src/store/index.js",
+					"file": "upage/src/app.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 555,
+						"buffer_size": 252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								101,
-								101
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "upage/src/aside/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 494,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "upage/src/aside/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "upage/src/paper/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "upage/src/widget/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
 							]
 						],
 						"settings":
@@ -777,25 +922,27 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "upage/src/app.html",
+					"buffer": 7,
+					"file": "upage/src/paper/index.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 233,
+						"buffer_size": 549,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								225,
-								225
+								508,
+								508
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/Sass/Sass.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -805,20 +952,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "upage/src/header/index.js",
+					"buffer": 8,
+					"file": "upage/src/paper/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 670,
+						"buffer_size": 1065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								660,
-								660
+								911,
+								911
 							]
 						],
 						"settings":
@@ -828,37 +975,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "upage/src/header/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 764,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								619,
-								619
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 158.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,

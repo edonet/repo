@@ -17,5 +17,8 @@ import state from './state';
 export default {
     updatePaperSize: function (data) {
         state.paper.size = data;
+    },
+    addPaperWidget: function (data) {
+        state.paper.widgets.push(data);
     }
 };

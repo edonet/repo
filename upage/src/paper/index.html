@@ -3,6 +3,10 @@
  !-->
 <div class="app-wrapper">
     <div class="app-canvas">
-        <div class="app-paper" :style="style"></div>
+        <div class="app-paper" :style="size">
+            <div class="app-paper-body" :style="style" @drop="drop($event)" @dragover='dragover($event)'>
+                <widget v-for="x in paper.widgets" :data="x"></widget>
+            </div>
+        </div>
     </div>
 </div>

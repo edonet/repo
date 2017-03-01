@@ -16,5 +16,14 @@ import template from './index.html';
  ************************************
  */
 export default {
-    template
+    template,
+    props: {
+        toolbar: Array
+    },
+    methods: {
+        drag: function (e, data) {
+            console.log(e);
+            e.dataTransfer.setData('text', data);
+        }
+    }
 };
