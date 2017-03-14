@@ -545,31 +545,31 @@ exports.default = { text: _text2.default, image: _image2.default, list: _list2.d
 /* 17 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+// removed by extract-sass-webpack-plugin
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+// removed by extract-sass-webpack-plugin
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+// removed by extract-sass-webpack-plugin
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+// removed by extract-sass-webpack-plugin
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+// removed by extract-sass-webpack-plugin
 
 /***/ }),
 /* 22 */,

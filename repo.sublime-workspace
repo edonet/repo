@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"forE",
+				"forEach\tArray"
+			],
+			[
+				"sett",
+				"setTimeout\tWindow"
+			],
+			[
+				"setT",
+				"setTimeout\tWindow"
+			],
+			[
+				"gett",
+				"getTime\tDate"
+			],
+			[
+				"reso",
+				"resolve\tdeferred"
+			],
+			[
+				"entr",
+				"enter\t$animate"
+			],
+			[
+				"extract",
+				"extract-text-webpack-plugin"
+			],
+			[
 				"cons",
 				"console\tConsole"
 			],
@@ -71,86 +99,78 @@
 			"file": "upage/webpack.config.js",
 			"settings":
 			{
-				"buffer_size": 2260,
+				"buffer_size": 2304,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "upage/src/store/state.js",
+			"file": "plugins/extract-sass-webpack-plugin/index.js",
 			"settings":
 			{
-				"buffer_size": 463,
+				"buffer_size": 4327,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "upage/src/app.html",
+			"contents": "Searching 237 files for \"succeed-module\"\n\n/Users/lifx/web/repo/node_modules/webpack/lib/Compilation.js:\n  164  \t\t\t\treturn callback(error);\n  165  \t\t\t}\n  166: \t\t\tthis.applyPlugins1(\"succeed-module\", module);\n  167  \t\t\treturn callback();\n  168  \t\t});\n\n/Users/lifx/web/repo/node_modules/webpack/lib/ProgressPlugin.js:\n   73  \t\t\t});\n   74  \t\t\tcompilation.plugin(\"failed-module\", moduleDone);\n   75: \t\t\tcompilation.plugin(\"succeed-module\", moduleDone);\n   76  \t\t\tvar syncHooks = {\n   77  \t\t\t\t\"seal\": [0.71, \"sealing\"],\n\n2 matches across 2 files\n",
 			"settings":
 			{
-				"buffer_size": 252,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 540,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "upage/src/aside/index.js",
+			"file": "node_modules/webpack/lib/ProgressPlugin.js",
 			"settings":
 			{
-				"buffer_size": 494,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 5706,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "upage/src/aside/index.html",
+			"file": "plugins/extract-sass-webpack-plugin/async.js",
 			"settings":
 			{
-				"buffer_size": 190,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "upage/src/paper/index.html",
-			"settings":
-			{
-				"buffer_size": 333,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "upage/src/widget/index.js",
-			"settings":
-			{
-				"buffer_size": 362,
+				"buffer_size": 678,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
-				"name": "index.js"
+				"name": "async.js"
 			}
 		},
 		{
-			"file": "upage/src/paper/index.scss",
+			"file": "node_modules/webpack/lib/Compilation.js",
 			"settings":
 			{
-				"buffer_size": 549,
+				"buffer_size": 34639,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "upage/src/paper/index.js",
+			"file": "plugins/extract-sass-webpack-plugin/loader.js",
 			"settings":
 			{
-				"buffer_size": 1065,
+				"buffer_size": 285,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "loader.js"
+			}
+		},
+		{
+			"file": "upage/dist/index.js",
+			"settings":
+			{
+				"buffer_size": 14723,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/Erik/Terminal.sublime-build",
+	"build_system": "Packages/Sass/Sass.sublime-build",
 	"build_system_choices":
 	[
 		[
@@ -500,9 +520,45 @@
 				"Packages/Erik/Terminal.sublime-build",
 				"Webpack"
 			]
+		],
+		[
+			[
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					""
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"List"
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Killall Node"
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Webpack"
+				],
+				[
+					"Packages/Erik/Terminal.sublime-build",
+					"Server"
+				],
+				[
+					"Packages/Sass/Sass.sublime-build",
+					""
+				],
+				[
+					"Packages/Sass/Sass.sublime-build",
+					"ruby"
+				]
+			],
+			[
+				"Packages/Sass/Sass.sublime-build",
+				""
+			]
 		]
 	],
-	"build_varint": "Server",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -562,29 +618,44 @@
 	"expanded_folders":
 	[
 		"/Users/lifx/web/repo",
+		"/Users/lifx/web/repo/plugins",
+		"/Users/lifx/web/repo/plugins/extract-sass-webpack-plugin",
 		"/Users/lifx/web/repo/upage",
 		"/Users/lifx/web/repo/upage/dist",
 		"/Users/lifx/web/repo/upage/src",
-		"/Users/lifx/web/repo/upage/src/widget"
+		"/Users/lifx/web/repo/node_modules/webpack/lib"
 	],
 	"file_history":
 	[
-		"/Users/lifx/web/repo/upage/src/app.js",
-		"/Users/lifx/web/repo/upage/src/header/index.js",
-		"/Users/lifx/web/repo/upage/src/header/index.html",
-		"/Users/lifx/web/repo/upage/src/app.html",
-		"/Users/lifx/web/repo/upage/src/store/index.js",
-		"/Users/lifx/web/repo/upage/webpack.config.js",
-		"/Users/lifx/web/repo/upage/src/index.js",
-		"/Users/lifx/web/repo/upage/src/paper/index.js",
-		"/Users/lifx/web/repo/upage/src/store/state.js",
+		"/Users/lifx/web/repo/node_modules/webpack/lib/webpack.js",
+		"/Users/lifx/web/repo/node_modules/webpack/lib/SingleEntryPlugin.js",
+		"/Users/lifx/web/repo/node_modules/webpack/package.json",
+		"/Users/lifx/web/repo/.gitignore",
+		"/Users/lifx/web/repo/plugins/extract-sass-webpack-plugin/loader.js",
+		"/Users/lifx/web/repo/upage/src/aside/index.html",
+		"/Users/lifx/web/repo/upage/src/paper/index.html",
+		"/Users/lifx/web/repo/upage/src/widget/index.js",
 		"/Users/lifx/web/repo/upage/src/store/action.js",
+		"/Users/lifx/web/repo/upage/src/paper/index.js",
+		"/Users/lifx/web/repo/upage/src/header/index.js",
+		"/Users/lifx/web/repo/upage/src/app.js",
+		"/Users/lifx/web/repo/upage/webpack.config.js",
+		"/Users/lifx/web/repo/plugins/extract-sass-webpack-plugin/index.js",
+		"/Users/lifx/web/repo/upage/src/store/state.js",
+		"/Users/lifx/web/repo/upage/src/app.html",
+		"/Users/lifx/web/repo/upage/src/aside/index.js",
+		"/Users/lifx/web/repo/upage/src/widget/widgets.js",
+		"/Users/lifx/web/repo/upage/src/paper/index.scss",
+		"/Users/lifx/web/repo/upage/src/widget/text.js",
+		"/Users/lifx/web/repo/upage/src/widget/image.js",
+		"/Users/lifx/web/repo/upage/src/widget/list.js",
+		"/Users/lifx/web/repo/upage/src/header/index.html",
+		"/Users/lifx/web/repo/upage/src/store/index.js",
+		"/Users/lifx/web/repo/upage/src/index.js",
 		"/Users/lifx/web/repo/upage/src/store/model.js",
 		"/Users/lifx/web/repo/upage/src/store.js",
 		"/Users/lifx/web/repo/upage/dist/index.html",
 		"/Users/lifx/web/repo/upage/src/header/index.scss",
-		"/Users/lifx/web/repo/upage/src/paper/index.html",
-		"/Users/lifx/web/repo/upage/src/paper/index.scss",
 		"/Users/lifx/web/repo/upage/src/common/base.scss",
 		"/Users/lifx/web/repo/upage/src/common/config.scss",
 		"/Users/lifx/web/repo/upage/src/common/iconfont.scss",
@@ -646,11 +717,8 @@
 		"/Users/lifx/web/repo/upage/src/property/index.js",
 		"/Users/lifx/web/repo/upage/src/property/index.html",
 		"/Users/lifx/web/repo/bin/terminal.sh",
-		"/Users/lifx/web/repo/upage/src/aside/index.js",
-		"/Users/lifx/web/repo/upage/src/aside/index.html",
 		"/Users/lifx/web/repo/upage/src/aside/index.scss",
 		"/Users/lifx/web/repo/upage/src/index.html",
-		"/Users/lifx/web/repo/.gitignore",
 		"/Users/lifx/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/Users/lifx/edoner/repo/test.js",
 		"/Users/lifx/edoner/repo/postcss.config.js",
@@ -663,13 +731,14 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/lifx/web/repo/node_modules/webpack/lib",
 			""
 		]
 	},
@@ -678,6 +747,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"url(",
+			"console",
+			"activeModules",
+			" compiler.plugin('compilation', compilation => {\n\n            compilation.plugin('succeed-module', module => {\n\n                this.activeModules.delete(module.userRequest);\n\n\n                console.log(this.activeModules);\n                async.resolve();\n            });\n\n            compilation.plugin('failed-module', module =>{\n                this.activeModules.delete(module.userRequest);\n\n                console.log('failed module');\n                async.resolve();\n            });\n        });",
+			"activeModules",
+			"var",
+			"succeed-module",
+			"md",
+			"module",
+			"request",
+			"buildModule",
+			"rebuild",
+			"webpackOptions",
+			"addEntry",
+			"addModule",
+			"addEntry",
+			"params",
+			"\"",
+			"removed",
+			"remove",
+			"filename",
+			"sassRequestList",
+			"\"",
+			"text",
+			"render",
 			"css",
 			"x",
 			"widget",
@@ -719,7 +813,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -728,15 +822,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2260,
+						"buffer_size": 2304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1783,
-								1783
+								1826,
+								1826
 							]
 						],
 						"settings":
@@ -744,175 +838,6 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 791.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "upage/src/store/state.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 463,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								332,
-								332
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "upage/src/app.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 252,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								252,
-								252
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "upage/src/aside/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 494,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								66,
-								66
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "upage/src/aside/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "upage/src/paper/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								333,
-								333
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "upage/src/widget/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 362,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								352,
-								352
-							]
-						],
-						"settings":
-						{
-							"auto_name": "index.js",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -922,50 +847,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "upage/src/paper/index.scss",
+					"buffer": 1,
+					"file": "plugins/extract-sass-webpack-plugin/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 549,
+						"buffer_size": 4327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								508,
-								508
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Sass.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "upage/src/paper/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								911,
-								911
+								2295,
+								2295
 							]
 						],
 						"settings":
@@ -975,10 +870,207 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 158.0,
+						"translation.y": 1173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										181,
+										195
+									],
+									[
+										418,
+										432
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "node_modules/webpack/lib/ProgressPlugin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1613,
+								1470
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 817.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "plugins/extract-sass-webpack-plugin/async.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								650,
+								650
+							]
+						],
+						"settings":
+						{
+							"auto_name": "async.js",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "node_modules/webpack/lib/Compilation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10366,
+								10361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 2.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "plugins/extract-sass-webpack-plugin/loader.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"auto_name": "loader.js",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "upage/dist/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								108
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1089,7 +1181,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 248.0,
+	"side_bar_width": 243.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

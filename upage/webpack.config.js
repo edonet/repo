@@ -9,7 +9,8 @@
 const
     path = require('path'),
     webpack = require('webpack'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    ExtractSassPlugin = require('../plugins/extract-sass-webpack-plugin');
 
 
 /*
@@ -76,6 +77,7 @@ module.exports = {
         //     compress: { warnings: false }
         // }),
         new webpack.optimize.AggressiveMergingPlugin(),
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name].css'),
+        new ExtractSassPlugin()
     ]
 };
