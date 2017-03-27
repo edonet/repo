@@ -43,7 +43,8 @@
     "server": "./bin/server.js",
     "transfer": "./bin/transfer.js",
     "dist": "./bin/webpack.js",
-    "terminal": "./bin/terminal.js"
+    "terminal": "./bin/terminal.js",
+    "cgoban": "./bin/cgoban.js"
   },
   "bugs": {
     "url": "https://github.com/edonet/repo/issues"
